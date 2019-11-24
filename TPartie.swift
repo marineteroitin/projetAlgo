@@ -33,4 +33,9 @@ var joueurCourant : TJoueur {get set}
 //Résultat: renvoie le joueur adverse du joueur passé en paramètre
 func joueurAdverse(joueur : TJoueur) -> TJoueur
 
+//verifierPlateau: TJoueur -> Bool
+//Résultat : Retourne True si le maitre du joueur passé en paramètre est placé sur l'arche du joueur adverse ou si le maitre adverse vient d'être tué, False sinon
+//Post : Envoi le joueur courant en paramètre
+func verifierAdverse(joueur: TJoueur) -> TJoueur
+
 
