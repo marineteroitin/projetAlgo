@@ -3,41 +3,72 @@ import TCarte
 import TPion
 import TPartie
 import TPosition
+import TJoueur
+import TPlateau
 
-/*idée 
 //je crée la partie :
 p = TPartie()
 
 //affectation du joueur courant
-joueurCourant = commence (var de TPpartie)
+p.joueurCourant = p.commence
 
-afficher "Joueur joueurCourant.couleur, à toi de jouer !"
+print("Joueur " p.joueurCourant.couleur " à toi de jouer ! \n "
 
 while (!p.finDePartie) {
-    vérifier que le joueur puisse déplacer un pion, 
-    SI OUI :
-        afficher ("choisi une carte parmi les suivantes")
-        afficher les carte du joueurCourant (son nom et les déplacements possibles pour chacune d'entre elles)
-        selectionner la carte choisie (créer une variable car en cous utilisation ??? utile pour déplacement et pour echanger à la fin du tour )
-        demander le deplacement qu'il veut (choix de la carte, puis de la position choisie sur la carte)
-        afficher les deplacement possible avec la carte qu'il a choisi
-        vérifier si le pion peut se déplacer selon le déplacement qu'il a choisi, si false lui redemander un autre déplacement
-        sinon bouger le pion, tuer si necessaire un pion adverse
-        echanger les cartes
+   if(existeDeplacement(p.joueurCourant)){ //si un déplacement est possible avec les cartes qu'il possède
+       print("choisi une carte parmi les suivantes:  (tape son nom) \n")
+       //afficher les carter du joueur
+       for i in getCartes(p.joueurCourant){
+           afficherCarte(i)
+       }
+       //je stock le nom de la carte choisie dans une variable
+       var nomCarte = readLine()
+       //vérifier que la carte est bien une des cartes du joueur et redemander si besoin
+        while (!(nomCarte === (getCartes(p.joueurCourant)[1].nom)) || !(nomCarte === (getCartes(p.joueurCourant)[2].nom)){
+            print("tu n'a pas saisie le nom d'une de tes cartes, recommence ! \n")
+                 var nomCarte = readLine()
+        }
 
-    SINON 
+
+
+
+        //demander quel pion il veut bouger et verifier que le pion est en vie
+
+
+
+
+
+
+        /*
+        print("tu as choisi la carte:" + nomCarte + "quel déplacement (x,y) veut tu faire ? \n")
+        var deplacement = readLine()
+
+        //vérifier que le déplacement appartient bien à la carte choisie
+        if (nomCarte === (getCartes(p.joueurCourant)[1].nom){
+            while !(deplacement === ?????????????????????????){
+                print("tu n'a pas saisie un déplacement de ta carte, recommence ! \n")
+                var deplacement = readLine()
+            }
+        }else{//le joueur a choisi l'autre carte
+        while !(deplacement === ???????????????????????????????????){
+            print("tu n'a pas saisie un déplacement de ta carte, recommence ! \n")
+            var deplacement = readLine() }
+        }
+        
+        bouger le pion, tuer si necessaire un pion adverse
+        echanger les cartes
+        }else{
         afficher (aucun déplacement possible... choisi la carte à échanger parmi les suivantes)
         afficher les carte du joueur
         selectionner la carte choisie
         echanger les cartes 
+        }
 
     //changement du joueur courant
-    couleurJoueurCourant = changerJoueurCourant() JE SUIS PAS SURE DE LA SIGNATURE DE LA FONCTION changerJoueurCourant()
-}
+    p.joueurCourant = p.joueurAdverse(p.joueurCourant)
 
 
-afficher "partie terminée, le gagnant est le joueur de couleur aGagne"
+print("La partie est terminée, le gagnant est le joueur de couleur" + p.aGagne )
 
 
 
-*/

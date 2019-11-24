@@ -1,4 +1,7 @@
 #encoding: utf-8
+import TCarte
+import TJoueur
+import TPosition
 
 //init:  -> TPion
 //Résultat: crée un pion avec un couleur , un type de pion, et un boolean estVivant
@@ -27,14 +30,18 @@ var position : TPosition {get set}
 var estVivant : Bool {get set}
 
 //bougerPion : TPion x Int x Int 
-//Résultat: la case (x,y) devient occupée et l'ancienne ne l'est plus. ATTENTION si c'est le joueur de la couleur commence, il n'y a pas de problème mais si c'est l'autre joueur les déplacement se font dans le sens opposé à cause de l'orientation du plateau (x(-1)les déplacement selon x et y)
+//Résultat: l'ancienne position n'est plus occupée. Le pion est sur la nouvelle position qui sera donc occupée.
+// ATTENTION si c'est le joueur de la couleur commence, il n'y a pas de problème on déplacera le pion de +x sur sa ligne et +y sur sa colonne 
+//mais si c'est l'autre joueur les déplacement se font dans le sens opposé à cause de l'orientation du plateau: -x  sur sa ligne et -y sur sa colonne
 //Post: peutBouger(pion, position)==vraie
 mutating func bougerPion(pion : TPion, x : Int, y : Int)
 
 //peutBouger : TPion x Int x Int -> Bool
 //Résultat: true si le pion appartient au joueur, est vivant, la nouvelle position ne sort pas de la grille, et n'est pas occupée par un de ses pions (de la même couleur).
-//Post: la position définie par x,y doit être une position obtenue avec une carte du joueur qui joue
-func peutBouger(pion : TPion,x : Int, y : Int) -> Bool
+//Pré: le déplacement (x,y) par rapport à la case du joueur doit correspondre à un déplacement d'une carte du joueur
+func peutBouger(pion : TPion, x : Int, y : Int) -> Bool
+
+
 
 
 

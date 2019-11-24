@@ -33,6 +33,4 @@ var joueurCourant : TJoueur {get set}
 //Résultat: renvoie le joueur adverse du joueur passé en paramètre
 func joueurAdverse(joueur : TJoueur) -> TJoueur
 
-//changerJoueurCourant : TPartie 
-//Résultat: change le joueur courant 
-func changerJoueurCourant()
+

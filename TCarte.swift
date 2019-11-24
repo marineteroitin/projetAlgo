@@ -5,10 +5,9 @@
 //Post:la couleur est soit "rouge" soit "bleu"
 init()
 
-//afficherDeplacement: -> ((Int),(Int))
-//Résultat: affiche tous les déplacements possibles par rapport à la case occupée par le joueur
-//Post: La carte passé en paramètre appartient au tas de cartes du plateaux
-func  afficherDeplacement() -> ((Int),(Int))
+//getMotif: -> ((Int),(Int))
+//Résultat: retourne tous les déplacements possibles par rapport à la case occupée par le joueur.
+func  getMotif() -> ((Int),(Int))
 
 //nom : TCarte -> String
 //Résultat: Retourne le nom de la carte
@@ -19,3 +18,9 @@ var nom : String {get}
 //Résultat: Retourne la couleur de la carte, soit "bleu", soit "rouge"
 //Post: La carte passé en paramètre appartient au tas de cartes du plateaux
 var couleur : String {get}
+
+//afficherCarte : TCarte
+//Resultat: affiche le nom et les déplacements possibles de la carte passée en paramètres
+//Pré: les cartes ont été distribuées
+func afficherCarte(carte : TCarte) 
+
