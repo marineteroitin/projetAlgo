@@ -1,7 +1,7 @@
 #encoding: utf-8
 
 //init: -> TCarte
-//Résultat: cette fonction crée une carte avec un nom, une couleur et un motif l'ensemble des déplacements posibles par rapport à la case occupée par le joueur
+//Résultat: cette fonction crée une carte avec un nom, une couleur et un motif = l'ensemble des déplacements posibles par rapport à la case occupée par le joueur
 //Post:la couleur est soit "rouge" soit "bleu"
 init()
 

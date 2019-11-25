@@ -18,7 +18,7 @@ var commence : TJoueur {get}
 
 //finPartie : TPartie -> Bool
 //Résultat: retourne True si le j1 capture le maître de j2 “Voie de la Pierre” ou si le maître de j1 va sur la case arche de j2 (la case de départ du Maitre) “Voie du Ruisseau
-var finPartie : Bool { get }
+func finPartie(partie : TPartie) -> Bool
 
 //aGagne : TPartie -> Sting
 //Résultat: retourne la couleur du joueur qui a gagné. (celui qui a tué le maitre de l'autre ou qui a positionné son maitre est sur l'arche de l'autre (la case de départ de son maitre))

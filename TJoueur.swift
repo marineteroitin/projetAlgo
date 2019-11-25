@@ -24,16 +24,17 @@ var couleur : String {get}
 //Pré: la carte doit appartenir au joueur, et s'il a pu déplacer son pion, ça doit être la carte qu'il a utilisé. Si il n'a pas pu déplacer son pion, ça peut être n'importe laquelle de ses deux cartes
 func echangerCarte(carte : TCarte, plateau : TPlateau)
 
+//afficherPionsEnVie : TJoueur
+//Résulat: affiche les pions en vie du joueur passé en paramètre (son type (élève ou maitre) et sa position), en utilisant la fonction afficherPion de TPion
+func afficherPionsEnVie(joueur : TJoueur)
 
-//------------------------------------------------------------------------
-// Nouvelle fonction pour existeDeplacement: à voir si il faut la garder
+//afficherCartes : TJoueur
+//Résulat: affiche les carte du joueur passé en paramètre (nom et motif (déplacements possibles)), en utilisant la fonction afficherCarte de TCarte
+func afficherCartes(joueur : TJoueur)
 
 //existeDeplacement : TJoueur -> Bool
 //Résultat: retourne true si le joueur peut déplacer au moins un pion avec les cartes qu'il a 
 //pré: le joueur à été créé 
 func existeDeplacement(joueur : TJoueur) -> Bool
 
-//existeDeplacement: TJoueur x TCarte x TPion -> Bool
-//Résultat : retourne true si le joueur a au moins unpossibilité de déplacer le choisie avec la carte choisie
-//Pré : le joueur a choisi un pion et un carte parmis ses pions et ses cartes.
-func existeDeplacement(joueur : TJoueur, carte: TCarte, pion: TPion) -> Bool
+

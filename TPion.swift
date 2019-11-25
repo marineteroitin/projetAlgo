@@ -42,6 +42,7 @@ mutating func bougerPion(pion : TPion, x : Int, y : Int)
 func peutBouger(pion : TPion, x : Int, y : Int) -> Bool
 
 
-
-
+//afficherPion : TPion
+//Résulat: affiche le pion passé en paramètre (sa couleur, son type (élève ou maitre) et sa position)
+func afficherPion(pion : TPion)
 
