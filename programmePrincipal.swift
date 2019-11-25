@@ -29,59 +29,73 @@ while (!p.finDePartie()) {
 
 		    //Le joueur choisis un de ses pions toujours en vie
 		    print("Choisis un pion en donnant sa position: \n")
-		    var pionChoisi = readLine() //Le joueur saisi en console la position du pion qu'il veut bouger
-//demander une fonction qui vérifie qu'un pion de ce joueur existe bien à cette position 
-//et redemander une saisie tant que la fonction est false
+		    var positionPionChoisi = readLine() //Le joueur saisi en console la position du pion qu'il veut bouger
+			while !(p.joueurCourant.existePion(position : positionPionChoisi)){ //redemande un pion tant qu'il ne saisie pas la position d'un de ses pions en vie
+				print(" tu n'as pas saisie la position d'un de tes pions en vie, recommence : \n")
+				positionPionChoisi = readLine()
+			}
+			//récupérer le pion choisi
+			var pionChoisi = getPion(joueur : p.joueurCourant, position : positionPionChoisi)
 
-		    //Le joueur choisis un des pions toujours en vie sur le plateau
-		    print("Choisis une carte en donnat son nom:\n")
-		    var carteChoisie = readLine() //Le joueur saisi en console le nom de la carte qu'il veut jouer
-//idem que pour pion
-		    
-			
-		    
-		    //demander quel mouvement ?
-//vérifier que le mouvement que le mouvement choisit est possible avec sa carte et son pion qu'il a choisi
-//vérifier suite
-		        if (peutBouger(pionChoisi, x, y)){
-		            //Gère le sens du mouvement des pions
-		            if (p.joueurCourant == p.commence){
-		                bougerPion(pionChoisi, x, y)
-		            } else {
-		                bougerPion(pionChoisi, -x, -y)
-		            }
-		           
+		    //Le joueur choisis maintenant une carte
+		    print("Choisis une carte en donnant son nom: \n")
+		    var nomCarteChoisie = readLine() //Le joueur saisi en console le nom de la carte qu'il veut jouer
+			while !(p.joueurCourant.existeCarte(nom : nomCarteChoisie)){ //redemande une carte tant qu'il ne saisie pas le nom d'une de ses cartes
+				print(" Tu n'as pas saisie le nom d'une de tes cartes, recommence : \n")
+				nomCarteChoisie = readLine()
+			}
+			//récupérer la carte choisie
+			var carteChoisie = getCarte(joueur : p.joueurCourant, nom : nomCarteChoisie )
 
+			//le joueur choisi le déplacement qu'il veut faire.
+			print("Choisis le déplacement que tu veux réaliser: x puis y : \n")
+			var x = readLine()
+			var y = readLine()
+			//vérifier que le déplacement appartient à la carte que le joueur à choisi
+			while !(deplacementAppartientMotif(carte : carteChoisie, x : x, y : y) ){
+				print("Ce déplacement n'appartient pas à la carte choisie, recommence : x puis y : \n")
+				 x = readLine()
+				y = readLine()
+			}
+            //vérifier que le mouvement que le mouvement choisit est possible avec sa carte et son pion qu'il a choisi
+		    if (peutBouger(position : pionChoisi.position, x : x, y : y)){ 
+				bougerPion(pion : pionChoisi, x : x, y : y) //je tue le pion adverse si besoin lorsque je bouge
 
-		            //Une fois que le joueur a bougé son pion: la carte est échangée
-		            echangerCarte(carteChoisie) //attention carte choisie est un string !!!!!
-//findepartie=true
+		        //Une fois que le joueur a bougé son pion: la carte utilisée est échangée avec celle du milieu 
+		        p.joueurCourant.echangerCarte(carte : carteChoisie, plateau : p)
+				  
+				//le tour est fini
+				finTour = true
 
-		        } else {
-		            print("Le mouvement choisi pour ce pion avec cette carte n'est pas possible")
-		        }
-		    //Si existeDeplacement a retourné aucun mouvement
 		    } else {
-		        print("Aucun déplacement n'est possible pour ce pion avec cette carte, il faut choisir une autre carte ou un autre pion")
+		            print("Le mouvement choisi pour ce pion n'est pas possible avec cette carte, il faut choisir une autre carte ou un autre pion \n ")
 		    }
+
 		}
 		while(!finTour)
 	} else {
-        	afficher (aucun déplacement possible... choisi la carte à échanger parmi les suivantes)
-        	afficher les carte du joueur
-        	selectionner la carte choisie
-        	echanger les cartes 
-	}
+        	print("Aucun déplacement n'est possible avec les cartes que tu possèdes. Quelle carte veut tu échanger avec celle du plateau ? \n")
+        	//afficher les carte du joueur
+			p.joueurCourant.afficherCartes()
+
+			print("Saisie le nom de la carte \n")
+			var nomCarteChoisie = readLine() //Le joueur saisi en console le nom de la carte qu'il veut 
+			while !(p.joueurCourant.existeCarte(nom : nomCarteChoisie)){ //redemande une carte tant qu'il ne saisie pas le nom d'une de ses cartes
+				print(" Tu n'as pas saisie le nom d'une de tes cartes, recommence : \n")
+				nomCarteChoisie = readLine()
+			}
+			//récupérer la carte choisie
+			var carteChoisie = getCarte(joueur : p.joueurCourant, nom : nomCarteChoisie )
+
+        	//echanger les cartes 
+			p.joueurCourant.echangerCarte(carte : carteChoisie, plateau : p)
+		}
 
 
         //changement du joueur courant
         p.joueurCourant = p.joueurAdverse(p.joueurCourant)
 
-
-	//Fonction qui vérifie qu'un carte apprtient bien au joueur
-	//Fonction qui dit si un déplacement appartient au motif d'une carte
-        //Il n'y a plus aucune fonction pour tuer un pion adverse
-        }
+    }
        
 print("La partie est terminée, le gagnant est le joueur de couleur" + p.aGagne )
 

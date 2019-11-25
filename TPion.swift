@@ -31,15 +31,16 @@ var estVivant : Bool {get set}
 
 //bougerPion : TPion x Int x Int 
 //Résultat: l'ancienne position n'est plus occupée. Le pion est sur la nouvelle position qui sera donc occupée.
+// Si lors de son déplacement le pion, arrive sur une case occupée par un pion du joueur adverse, on le tue (la valeur estVivant du pion adverse devient false)
 // ATTENTION si c'est le joueur de la couleur commence, il n'y a pas de problème on déplacera le pion de +x sur sa ligne et +y sur sa colonne 
 //mais si c'est l'autre joueur les déplacement se font dans le sens opposé à cause de l'orientation du plateau: -x  sur sa ligne et -y sur sa colonne
 //Post: peutBouger(pion, position)==vraie
 mutating func bougerPion(pion : TPion, x : Int, y : Int)
 
 //peutBouger : TPion x Int x Int -> Bool
-//Résultat: true si le pion appartient au joueur, est vivant, la nouvelle position ne sort pas de la grille, et n'est pas occupée par un de ses pions (de la même couleur).
+//Résultat: true si le pion appartient au joueur, est vivant, et que la nouvelle position de ce pion ne sort pas de la grille, et n'est pas occupée par un de ses pions (de la même couleur).
 //Pré: le déplacement (x,y) par rapport à la case du joueur doit correspondre à un déplacement d'une carte du joueur
-func peutBouger(pion : TPion, x : Int, y : Int) -> Bool
+func peutBouger(position : TPion, x : Int, y : Int) -> Bool
 
 
 //afficherPion : TPion
