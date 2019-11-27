@@ -6,4 +6,4 @@ init()
 
 //estOccupee : Bool
 //Résultat: return True si un pion est sur la position, false sinon 
-var estOccupee : Bool {get set}
+var estOccupee: Bool {get set}
