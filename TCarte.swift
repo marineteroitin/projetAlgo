@@ -5,10 +5,6 @@
 //Post:la couleur est soit "rouge" soit "bleu"
 init()
 
-//getMotif: -> (Int,Int)
-//Résultat: retourne tous les déplacements possibles par rapport à la case occupée par le joueur.
-func  getMotif() -> (Int,Int)
-
 //nom : TCarte -> String
 //Résultat: Retourne le nom de la carte
 //Post: La carte passé en paramètre appartient au tas de cartes du plateaux
@@ -19,11 +15,15 @@ var nom : String {get}
 //Post: La carte passé en paramètre appartient au tas de cartes du plateaux
 var couleur : String {get}
 
+//getMotif: -> (Int,Int)
+//Résultat: retourne tous les déplacements possibles par rapport à la case occupée par le joueur.
+func  getMotif() -> (Int,Int)
+
 //afficherCarte : TCarte
 //Resultat: affiche le nom et les déplacements possibles de la carte passée en paramètres
 //Pré: les cartes ont été distribuées
-func afficherCarte(carte : TCarte) 
+func afficherCarte() 
 
 //deplacementAppartientMotif : TCarte x Int x Int -> Bool
 //Résultat: retourne true si le déplacement Int x Int appartient au motif de la carte passée en paramètre
-func deplacementAppartientMotif(carte : TCarte, x : x, y : y) -> Bool
+func deplacementAppartientMotif(x : x, y : y) -> Bool

@@ -32,10 +32,10 @@ var estVivant : Bool {get set}
 //peutBouger : TPion x Int x Int -> Bool
 //Résultat: true si le pion appartient au joueur, est vivant, et que la nouvelle position de ce pion ne sort pas de la grille, et n'est pas occupée par un de ses pions (de la même couleur).
 //Pré: le déplacement (x,y) par rapport à la case du joueur doit correspondre à un déplacement d'une carte du joueur
-func peutBouger(position : TPion, x : Int, y : Int) -> Bool
+func peutBouger(x : Int, y : Int) -> Bool
 
 
 //afficherPion : TPion
 //Résulat: affiche le pion passé en paramètre (sa couleur, son type (élève ou maitre) et sa position)
-func afficherPion(pion : TPion)
+func afficherPion()
 

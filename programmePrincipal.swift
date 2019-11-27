@@ -80,9 +80,7 @@ while (!p.finDePartie()) {
         
 	//changement du joueur courant
 	p.joueurCourant = p.joueurAdverse(p.joueurCourant)
-
-    }
-       
+}
 print("La partie est terminée, le gagnant est le joueur de couleur" + p.aGagne )
 
 
