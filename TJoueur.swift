@@ -1,5 +1,6 @@
 #encoding: utf-8
 
+protocol TJoueur{
 //init: -> TJoueur
 //Résultat: cette fonction crée un joueur avec une couleur, 4 pions élèves et un pion maître (tous en vie) , avec deux cartes vides
 init()
@@ -25,11 +26,11 @@ var couleur: String {get}
 func echangerCarte(carte: TCarte, plateau: TPlateau)
 
 //afficherPionsEnVie : TJoueur -> String
-//Résulat: retourne un string qui contient les pions en vie du joueur passé en paramètre (son type (élève ou maitre) et sa position), en utilisant la fonction afficherPion de TPion
+    //Résulat: retourne un string qui décrit les pions en vie du joueur passé en paramètre. Pour chacun des pions on veut: son type (élève ou maitre) et sa position. Utiliser la fonction afficherPion de TPion
 func afficherPionsEnVie() -> String
 
 //afficherCartes : TJoueur -> String
-//Résulat: retourne un string qui contient les carte du joueur passé en paramètre (nom et motif (déplacements possibles)), en utilisant la fonction afficherCarte de TCarte
+//Résulat: retourne un string qui contient les carte du joueur passé en paramètre. Pour chacune de ses cartes on veut, son nom et son motif (déplacements possibles). Utiliser la fonction afficherCarte de TCarte
 // dans le cas où c'est le joueur qui ne commence pas, il faut inverser les positions du motif (-x, -y)
 func afficherCartes() -> String
 
@@ -56,10 +57,5 @@ func getCarte(nom: String) -> TCarte
 //Pré: existePion(joueur, TPosition ) == true
 func getPion(position: TPosition) -> TPion
 
-//bougerPion : TPion x Int x Int 
-//Résultat: l'ancienne position n'est plus occupée. Le pion est sur la nouvelle position qui sera donc occupée.
-// Si lors de son déplacement le pion, arrive sur une case occupée par un pion du joueur adverse, on le tue (la valeur estVivant du pion adverse devient false)
-// ATTENTION si c'est le joueur de la couleur commence, il n'y a pas de problème on déplacera le pion de +x sur sa ligne et +y sur sa colonne 
-// mais si c'est l'autre joueur les déplacement se font dans le sens opposé à cause de l'orientation du plateau: -x  sur sa ligne et -y sur sa colonne
-//Pré: peutBouger(pion, position)==vraie
-func bougerPion(pion: TPion, x: Int, y: Int)
+
+}

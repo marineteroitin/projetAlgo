@@ -3,6 +3,7 @@ import TCarte
 import TJoueur
 import TPosition
 
+protocol TPion {
 //init :  -> TPion
 //Résultat: crée un pion avec un couleur , un type de pion, et un boolean estVivant
 //Pré: la couleur est soit "rouge" soit "bleu", le type de pion est soit "eleve" soit "maitre"
@@ -36,7 +37,15 @@ func peutBouger(x: Int, y: Int) -> Bool
 
 
 //afficherPion : TPion -> String
-//Résulat: affiche le pion passé en paramètre (sa couleur, son type (élève ou maitre) et sa position)
+//Résulat: retourne une chaine de caractères décrivant le pion passé en paramètre ex:pion(couleur : bleu (ou rouge), type : élève (ou maitre),position : x,y)
 //Pré: le pion a été crée auparavant
 func afficherPion() -> String
-
+    
+//bougerPion : TPion x Int x Int
+//Résultat: l'ancienne position n'est plus occupée. Le pion est sur la nouvelle position qui sera donc occupée.
+// Si lors de son déplacement le pion, arrive sur une case occupée par un pion du joueur adverse, on le tue (la valeur estVivant du pion adverse devient false)
+// ATTENTION si c'est le joueur de la couleur commence, il n'y a pas de problème on déplacera le pion de +x sur sa ligne et +y sur sa colonne
+// mais si c'est l'autre joueur les déplacement se font dans le sens opposé à cause de l'orientation du plateau: -x  sur sa ligne et -y sur sa colonne
+//Pré: peutBouger(pion, position)==vraie
+func bougerPion(pion: TPion, x: Int, y: Int)
+}

@@ -4,6 +4,7 @@ import TPion
 import TPosition
 import TPlateau
 
+protocol TPartie{
 //init: -> TPartie
 //Résultat : création des 16 cartes, création du plateau, création des 10 pions (5 rouges dont 4 élèves et un maître, et 5 bleus dont 4 élèves et un maître), création des 2 joueurs (un Rouge et un Bleu), 
 //placement des pions tel que le maître soit au milieu de la ligne devant le joueur de sa couleur et les élèves autour de celu-ci, ces cases seront donc occupée. 
@@ -38,5 +39,4 @@ func joueurAdverse(joueur: TJoueur) -> TJoueur
 //Résultat : renvoi la grille de 5 par 5 avec les positions de tous les pions sous forme de texte dans la console
 //Pré : La partie a été initialisée
 func afficherPartie() -> String
-
-
+}

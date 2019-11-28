@@ -1,5 +1,6 @@
 #encoding: utf-8
 
+protocol TCarte {
 //init: -> TCarte
 //Résultat: cette fonction crée une carte avec un nom, une couleur et un motif = l'ensemble des déplacements possibles par rapport à la case occupée par le joueur
 //Pré:la couleur est soit "rouge" soit "bleu"
@@ -20,10 +21,11 @@ var couleur: String {get}
 func getMotif() -> (Int,Int)
 
 //afficherCarte : TCarte -> String
-//Resultat: retourne un string qui contient le nom et les déplacements possibles de la carte passée en paramètre
+    //Resultat: retourne un string qui contient le nom et les déplacements possibles de la carte passée en paramètre. ex: carte(nom : dragon, déplacement : (x1,y1),(x2,y2),.....)
 //Pré: les cartes ont été distribuées
 func afficherCarte() -> String
 
 //deplacementAppartientMotif : TCarte x Int x Int -> Bool
 //Résultat: retourne true si le déplacement Int x Int appartient au motif de la carte passée en paramètre
 func deplacementAppartientMotif(x: x, y: y) -> Bool
+}
