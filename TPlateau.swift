@@ -7,6 +7,6 @@ protocol TPlateau{
     //carteMilieu : TPlateau -> TCarte
     //Pré: les carte ont déjà été distribuées 
     //Résultat: retourne la carte du milieu du plateau 
-    var carteMilieu: TCarte! {get set}
+    var carteMilieu : TCarte! {get set}
 
 }

@@ -7,12 +7,12 @@ protocol TCarte {
     //nom : TCarte -> String
     //Résultat: Retourne le nom de la carte
     //Pré: La carte passé en paramètre appartient au tas de cartes du plateaux
-    var nom: String {get}
+    var nom : String {get}
 
     //couleur : TCarte -> String
     //Résultat: Retourne la couleur de la carte, soit "bleu", soit "rouge"
     //Pré: La carte passé en paramètre appartient au tas de cartes du plateaux
-    var couleur: String {get}
+    var couleur : String {get}
 
     //getMotif: -> (Int,Int)
     //Résultat: retourne tous les déplacements possibles par rapport à la case occupée par le joueur.

@@ -11,31 +11,52 @@ protocol TPartie{
     //Pré : le plateau a été créé auparavant
     var plateau : TPlateau {get set}
     
-    //aGagne : TPartie -> Sting
+    //aGagne : TPartie -> String
     //Résultat: retourne la couleur du joueur qui a gagné. (celui qui a tué le maitre de l'autre ou qui a positionné son maitre est sur l'arche de l'autre (la case de départ de son maitre))
     //Pré: finDePartie == true
-    var aGagne : String {get}
+    var aGagne : String? {get set}
 
     //commence : TPartie -> TJoueur
     //Résultat: retoune le joueur qui a la même couleur que la carteMilieu
     //Pré: la partie est créée
-    var commence : TJoueur {get}
+    var commence : TJoueur!{get}
 
     //joueurCourant : TPartie -> TJoueur
     //Résultat: renvoie le joueur qui est en train de jouer
     //Pré : pour le set, il faut envoyer un TJoueur
-    var joueurCourant : TJoueur {get set}
-
-    //finPartie : TPartie -> Bool
-    //Résultat: retourne True si le j1 capture le maître de j2 “Voie de la Pierre” ou si le maître de j1 va sur la case arche de j2 (la case de départ du Maitre) “Voie du Ruisseau
-    func finPartie() -> Bool
+    var joueurCourant : TJoueur! {get set}
 
     //joueurAdverse : TPartie -> TJoueur
     //Résultat: renvoie le joueur adverse du joueur courant
     //Pré : Envoi le joueur courant en paramètre
-    var joueurAdverse: TJoueur {get set}
+    var joueurAdverse : TJoueur! {get set}
+
+    //finPartie : TPartie -> Bool
+    //Résultat: retourne True si le j1 capture le maître de j2 “Voie de la Pierre” ou si le maître de j1 va sur la case arche de j2 (la case de départ du Maitre) “Voie du Ruisseau
+    func finPartie() -> Bool
     
     //changerJoueur : TPartie
     //Résulat: le joueurCourant devient le joueurAdverse et inversement
     func changerJoueur()
 }
+
+
+//Class bidon pour éviter l'erreur : use of unresolved identifier 'Partie'; did you mean 'TPartie'?
+// var p : TPartie = Partie()
+/*
+class Partie : TPartie {
+
+	required init(){}
+	var plateau : TPlateau 
+	var aGagne : String?
+	var commence : TJoueur!
+	var joueurCourant : TJoueur!
+	var joueurAdverse : TJoueur!
+
+	func finPartie() -> Bool {
+		return true
+	}
+
+	func changerJoueur() {}
+}
+*/
