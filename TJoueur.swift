@@ -24,14 +24,14 @@ var couleur: String {get}
 //Pré: la carte doit appartenir au joueur, et s'il a pu déplacer son pion, ça doit être la carte qu'il a utilisé. Si il n'a pas pu déplacer son pion, ça peut être n'importe laquelle de ses deux cartes
 func echangerCarte(carte: TCarte, plateau: TPlateau)
 
-//afficherPionsEnVie : TJoueur
-//Résulat: affiche les pions en vie du joueur passé en paramètre (son type (élève ou maitre) et sa position), en utilisant la fonction afficherPion de TPion
-func afficherPionsEnVie()
+//afficherPionsEnVie : TJoueur -> String
+//Résulat: retourne un string qui contient les pions en vie du joueur passé en paramètre (son type (élève ou maitre) et sa position), en utilisant la fonction afficherPion de TPion
+func afficherPionsEnVie() -> String
 
-//afficherCartes : TJoueur
-//Résulat: affiche les carte du joueur passé en paramètre (nom et motif (déplacements possibles)), en utilisant la fonction afficherCarte de TCarte
+//afficherCartes : TJoueur -> String
+//Résulat: retourne un string qui contient les carte du joueur passé en paramètre (nom et motif (déplacements possibles)), en utilisant la fonction afficherCarte de TCarte
 // dans le cas où c'est le joueur qui ne commence pas, il faut inverser les positions du motif (-x, -y)
-func afficherCartes()
+func afficherCartes() -> String
 
 //existeDeplacement : TJoueur -> Bool
 //Résultat: retourne true si le joueur peut déplacer au moins un de ses pions en vie avec les cartes qu'il a 
