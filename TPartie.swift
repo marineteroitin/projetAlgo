@@ -34,9 +34,9 @@ func finPartie() -> Bool
 //Pré : Envoi le joueur courant en paramètre
 func joueurAdverse(joueur: TJoueur) -> TJoueur
 
-//afficherPartie : TPartie
+//afficherPartie : TPartie -> String
 //Résultat : renvoi la grille de 5 par 5 avec les positions de tous les pions sous forme de texte dans la console
 //Pré : La partie a été initialisée
-func afficherPartie()
+func afficherPartie() -> String
 
 
