@@ -3,10 +3,10 @@ import TCarte
 import TJoueur
 import TPosition
 
-//init:  -> TPion
+//init :  -> TPion
 //Résultat: crée un pion avec un couleur , un type de pion, et un boolean estVivant
 //Pré: la couleur est soit "rouge" soit "bleu", le type de pion est soit "eleve" soit "maitre"
-//Post : estVivant(init())==True
+//Post : estVivant(init())==True)
 init()
 
 //couleur : TPion -> String
@@ -16,12 +16,12 @@ var couleur: String {get}
 
 //type : TPion -> String
 //Résultat : retourne le type de pion, soit "maitre" soit "eleve"
-//Post: le pion a été crée auparavant
+//Pré: le pion a été crée auparavant
 var type: String {get}
 
 //position : TPion -> TPosition
 //Résultat : retourne la position occupée par le pion
-//Post: la partie à été crée et donc les pions initialisé à une position
+//Pré: la partie à été crée et donc les pions initialisé à une position
 var position: TPosition {get set}
 
 //estVivant : TPion -> Bool
@@ -35,7 +35,8 @@ var estVivant: Bool {get set}
 func peutBouger(x: Int, y: Int) -> Bool
 
 
-//afficherPion : TPion
+//afficherPion : TPion -> String
 //Résulat: affiche le pion passé en paramètre (sa couleur, son type (élève ou maitre) et sa position)
-func afficherPion()
+//Pré: le pion a été crée auparavant
+func afficherPion() -> String
 
