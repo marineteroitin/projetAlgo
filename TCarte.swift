@@ -14,9 +14,9 @@ protocol TCarte {
     //Pré: La carte passé en paramètre appartient au tas de cartes du plateaux
     var couleur : String {get}
 
-    //getMotif: -> (Int,Int)
+    //getMotif: -> ((Int,Int))
     //Résultat: retourne tous les déplacements possibles par rapport à la case occupée par le joueur.
-    func getMotif() -> (Int,Int)
+    func getMotif() -> ((Int,Int))
 
     //descriptionCarte : TCarte -> String
     //Resultat: retourne un string qui contient le nom et les déplacements possibles de la carte passée en paramètre. ex: carte(nom : dragon, déplacement : (x1,y1),(x2,y2),.....)
