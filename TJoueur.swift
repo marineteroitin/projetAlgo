@@ -5,7 +5,7 @@ protocol TJoueur{
     init()
     
     //couleur : TJoueur -> String
-    //Résultat : retourne la couleur du pion, soit "bleu", soit "rouge"
+    //Résultat : retourne la couleur du joueur, soit "bleu", soit "rouge"
     //Pré: le pion a été crée auparavant
     var couleur : String {get}
 
