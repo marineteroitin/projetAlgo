@@ -1,9 +1,10 @@
-#encoding: utf-8
+protocol TPosition{
+    //init: -> TPosition
+    //Résultat: création d'une TPosition qui ne contient pas de pion
+    //post: estOccupee(init())=false
+    init()
 
-//init: -> TPosition
-//Résultat: création d'une TPosition qui ne contient pas de pion
- init()
-
-//estOccupee : Bool
-//Résultat: return True si un pion est sur la position, false sinon 
-var estOccupee : Bool { get set }
+    //estOccupee : Bool
+    //Résultat: return True si un pion est sur la position, false sinon 
+    var estOccupee : Bool {get set}
+}
