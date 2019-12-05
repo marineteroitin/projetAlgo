@@ -9,6 +9,12 @@ protocol TJoueur{
     //Pré: le pion a été crée auparavant
     var couleur : String {get}
 
+
+    //caseMaitre : TJoueur -> TPosition
+    //Résultat : retourne la TPosition de la case maitre du joueur (c'est la case située au centre de la première ligne devant le joueur)
+    //Pré : la grille a été créée auparavant
+    var caseMaitre : TPosition {get}
+
     //getCartes : TJoueur
     //Resultat: retourne les deux cartes du joueur
     //Pré: les cartes ont été distribuées

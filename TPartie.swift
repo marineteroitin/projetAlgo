@@ -1,8 +1,13 @@
 protocol TPartie{
     //init: -> TPartie
-    //Résultat : RESPECTERE L'ORDRE : création des 16 cartes, création du plateau, création des 10 pions (5 rouges dont 4 élèves et un maître, et 5 bleus dont 4 élèves et un maître), création des 2 joueurs (un Rouge et un Bleu),
-    //placement des pions tel que le maître soit au milieu de la première ligne devant le joueur de sa couleur et les élèves autour de celu-ci, ces cases seront donc occupée.
-    //Pré : RESPECTER L'ORDRE: créer cartes avant le plateau, le plateau avant les pions, et les pions avant les joueurs.
+    //Résultat : RESPECTERE L'ORDRE : 
+    //  création des 16 cartes
+    //  création du plateuu qui est une grille de TPositions de taille 5x5
+    //  attribution de la carteMilieu (TCarte)
+    //  création des 10 pions (5 rouges dont 4 élèves et un maître, et 5 bleus dont 4 élèves et un maître)
+    //  création des 2 joueurs (un Rouge et un Bleu)
+    //  placement des pions tel que le maître soit au milieu de la première ligne devant le joueur de sa couleur et les élèves autour de celu-ci, ces cases seront donc occupée.
+    //Pré : RESPECTER L'ORDRE: créer cartes avant la grille, le plateau avant les pions, et les pions avant les joueurs.
     //Post: finDePartie(init()) == false et aGagne == nil
     init()
 
@@ -30,6 +35,11 @@ protocol TPartie{
     //Résultat: renvoie le joueur adverse du joueur courant
     //Pré : Envoi le joueur courant en paramètre
     var joueurAdverse : TJoueur! {get set}
+
+    //carteMilieu : TPartie -> TCarte
+    //Pré: les carte ont déjà été distribuées 
+    //Résultat: retourne la carte du milieu du plateau
+    var carteMilieu : TCarte! {get set}
 
     //finPartie : TPartie -> Bool
     //Résultat: retourne True si le joueurCourant capture le maître de joueurAdverse “Voie de la Pierre” ou si le maître de joueurCourant va sur la case arche de joueurAdverse (la case de départ du Maitre) “Voie du Ruisseau
