@@ -36,7 +36,7 @@ while (!p.finPartie()) {
             repeat {
                 print("Il faut choisir la position d'un des pions parmis ceux proposés : \n")
                 
-                //Demande la coordonée x au joueurs : permet de demander tant la saisie n'est pas un entier
+                //Demande la coordonée x au joueur : permet de demander tant la saisie n'est pas un entier
                 var v : Int? = nil
                 while v == nil {
                     print("il faut une valeur entière pour x")
@@ -44,7 +44,7 @@ while (!p.finPartie()) {
                 }
                 x1 = v! // v != nil
 
-                //Demande la coordonée x au joueurs : permet de demander tant la saisie n'est pas un entier
+                //Demande la coordonée y au joueur : permet de demander tant la saisie n'est pas un entier
                 var w : Int? = nil
                 while w == nil {
                     print("il faut une valeur entière pour y")

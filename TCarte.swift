@@ -15,15 +15,15 @@ protocol TCarte {
     var couleur : String {get}
 
     //getMotif: -> ((Int,Int))
-    //Résultat: retourne tous les déplacements possibles par rapport à la case occupée par le joueur.
+    //Résultat: retourne tous les déplacements relatifs pour la carte. Ces coordonsnées ne dépendent pas d'un pion.
     func getMotif() -> ((Int,Int))
 
     //descriptionCarte : TCarte -> String
-    //Resultat: retourne un string qui contient le nom et les déplacements possibles de la carte passée en paramètre. ex: carte(nom : dragon, déplacement : (x1,y1),(x2,y2),.....)
+    //Resultat: retourne un string qui contient le nom et les déplacements possibles de la carte passée en paramètre. ex: carte(nom : dragon, déplacement : ((x1,y1),(x2,y2),.....)
     //Pré: les cartes ont été distribuées
     func descriptionCarte() -> String
 
     //deplacementAppartientMotif : TCarte x Int x Int -> Bool
     //Résultat: retourne true si le déplacement Int x Int appartient au motif de la carte passée en paramètre
-    func deplacementAppartientMotif(x: Int, y: Int) -> Bool
+    func deplacementAppartientMotif(x : Int, y : Int) -> Bool
 }
