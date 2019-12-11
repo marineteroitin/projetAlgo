@@ -100,7 +100,7 @@ while (!p.finPartie()) {
                 pionChoisi.bougerPion(x : x2, y : y2) //je tue le pion adverse si besoin lorsque je bouge
 
 	        	//Une fois que le joueur a bougé son pion: la carte utilisée est échangée avec celle du milieu 
-	        	p.joueurCourant.echangerCarte(carte : carteChoisie, plateau : p.plateau)
+	        	p.joueurCourant.echangerCarte(carte : carteChoisie, partie : p)
 			  
 			    //le tour est fini
 			    finTour = true
@@ -130,12 +130,10 @@ while (!p.finPartie()) {
 		let carteChoisie : TCarte = p.joueurCourant.getCarte(nom : nomCarteChoisie ) //récupérer la carte choisie
 
     	//echanger les cartes 
-		p.joueurCourant.echangerCarte(carte : carteChoisie, plateau : p.plateau)
+		p.joueurCourant.echangerCarte(carte : carteChoisie, partie : p)
 	}
         
 	//changement du joueur courant
 	p.changerJoueur()
 }
 print("La partie est terminée, le gagnant est le joueur de couleur" + (p.aGagne ?? "nil") )
-
-
